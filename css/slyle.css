@@ -1385,6 +1385,25 @@ li>.footer__link {
 @media (max-width: 1100px) {
     .footer__container {
         padding: 0 15px;
+        
+        margin: 0 -15px;
+    }
+    .footer__img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .footer__item {
+        padding: 0 15px;
+        margin: -7px 0;
+    }
+    .footer__nav>a {
+        display: block;
+        padding-bottom: 14px;
+    }
+}
+@media (max-width: 650px) {
+    .footer__container {
+        
         flex-direction: column;
         margin: -35px 0;
     }
@@ -1401,5 +1420,4 @@ li>.footer__link {
         padding-bottom: 14px;
     }
 }
-
 /* footer end */
