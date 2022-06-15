@@ -21,12 +21,11 @@
 @font-face {
     font-family: 'Poppins';
     src: url('../fonts/poppins/regular/Poppins-Regular.eot');
-    src: local('☺'), url('../fonts/poppins/regular/Poppins-Regular.woff') format('woff'), 
-    url('../fonts/poppins/regular/Poppins-Regular.ttf') format('truetype'), 
-    url('../fonts/poppins/regular/Poppins-Regular.svg') format('svg');
+    src: local('☺'), url('../fonts/poppins/Regular/Poppins-Regular.woff') format('woff'), 
+    url('../fonts/poppins/Regular/Poppins-Regular.ttf') format('truetype'), 
+    url('../fonts/poppins/Regular/Poppins-Regular.svg') format('svg');
     font-weight: normal;
     font-style: normal;
-}
 
 @font-face {
     font-family: 'Poppins';
