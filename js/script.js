@@ -32,7 +32,7 @@ const isMobile = {
 if (isMobile.any()) {
     document.body.classList.add('_touch');
 
-    let menuArrows = document.querySelectorAll('.menu__first-link')
+    /*let menuArrows = document.querySelectorAll('.menu__first-link')
     if (menuArrows.length > 0) {
         for (let index = 0; index < menuArrows.length; index++) {
             const menuArrow = menuArrows[index];
@@ -40,9 +40,43 @@ if (isMobile.any()) {
                 menuArrow.classList.toggle('_active');
             })
         }
+    }*/
+    $(document).ready(function () {
+        $('.menu__first-link-1').on('click', function () {
+            $('.menu__sublist-1').fadeToggle();
+        })
+    });
+    $(document).ready(function () {
+        $('.menu__first-link-2').on('click', function () {
+            $('.menu__sublist-2').fadeToggle();
+        })
+    });
+    $(document).ready(function () {
+        $('.menu__first-link-3').on('click', function () {
+            $('.menu__sublist-3').fadeToggle();
+        })
+    });
+    let menu1 = $('.menu__first-link-1');
+    let submenu1 = $('.menu__sublist-1');
+$(document).mouseup(function (e){
+    if (! menu1.is(e.target) && menu1.has(e.target).length === 0 && ! submenu1.is(e.target) && submenu1.has(e.target).length === 0){
+        submenu1.fadeOut();
     }
-
-
+});
+let menu2 = $('.menu__first-link-2');
+let submenu2 = $('.menu__sublist-2');
+$(document).mouseup(function (e){
+if (! menu2.is(e.target) && menu2.has(e.target).length === 0 && ! submenu2.is(e.target) && submenu2.has(e.target).length === 0){
+    submenu2.fadeOut();
+}
+});
+let menu3 = $('.menu__first-link-3');
+let submenu3 = $('.menu__sublist-3');
+$(document).mouseup(function (e){
+if (! menu3.is(e.target) && menu3.has(e.target).length === 0 && ! submenu3.is(e.target) && submenu3.has(e.target).length === 0){
+    submenu3.fadeOut();
+}
+});
 } else {
     document.body.classList.add('_pc');
 }
@@ -71,7 +105,7 @@ if (closeTitle) {
         headerMenu.classList.add('_close');
     });
 };
-
+//  slider
 $(document).ready(function () {
     $('.gallery__photo').slick({
         slidesToShow: 5,
@@ -95,3 +129,5 @@ $(document).ready(function () {
         ]
     });
 });
+
+

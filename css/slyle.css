@@ -201,8 +201,7 @@ img {
     padding: 15px;
     background-color: #fff;
     transform: translate(0, 10%);
-    opacity: 0;
-    visibility: hidden;
+    display: none;
     pointer-events: none;
     transition: all 0.3s ease 0s;
 }
@@ -237,7 +236,9 @@ body._touch .menu__list>li._active .menu__sublist {
     z-index: 8;
     border-radius: 30px;
 }
-
+body._touch .menu__list>li._active .menu__sublist._close{
+    visibility: hidden;
+}
 .menu__btn-start {
     display: none;
 }
