@@ -49,10 +49,11 @@ if (isMobile.any()) {
 
 
 
-
+//  Открітие и закрытие подменю при нажатие в
     $(document).ready(function () {
         $('.menu__first-link').on('click', function () {
             $(this).children('.menu__sublist').fadeToggle();
+            $(this).children('.menu__arrow').toggleClass('_active');
         })
     });
 
