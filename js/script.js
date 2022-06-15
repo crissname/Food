@@ -49,7 +49,8 @@ if (isMobile.any()) {
 
 
 
-//  Открітие и закрытие подменю при нажатие в
+
+    //  Открітие и закрытие подменю при нажатие ссылку и Добавление класса актив стрелк
     $(document).ready(function () {
         $('.menu__first-link').on('click', function () {
             $(this).children('.menu__sublist').fadeToggle();
@@ -64,6 +65,7 @@ if (isMobile.any()) {
         if (!menu1.is(e.target) && menu1.has(e.target).length === 0 &&
             !submenu1.is(e.target) && submenu1.has(e.target).length === 0) {
             submenu1.fadeOut();
+            $('.menu__arrow').removeClass('_active');
         }
     });
     let menu2 = $('.menu__first-link-2');
@@ -71,7 +73,7 @@ if (isMobile.any()) {
     $(document).mouseup(function (e) {
         if (!menu2.is(e.target) && menu2.has(e.target).length === 0 && !submenu2.is(e.target) && submenu2.has(e.target).length === 0) {
             submenu2.fadeOut();
-            submenu1.addClass('.active1')
+            $('.menu__arrow').removeClass('_active');
         }
     });
     let menu3 = $('.menu__first-link-3');
@@ -79,11 +81,13 @@ if (isMobile.any()) {
     $(document).mouseup(function (e) {
         if (!menu3.is(e.target) && menu3.has(e.target).length === 0 && !submenu3.is(e.target) && submenu3.has(e.target).length === 0) {
             submenu3.fadeOut();
+            $('.menu__arrow').removeClass('_active');
         }
     });
 } else {
     document.body.classList.add('_pc');
 }
+
 //  Бургер
 let iconMenu = document.querySelectorAll('.menu__icon');
 let menuBody = document.querySelector('.menu__body');
@@ -109,6 +113,7 @@ if (closeTitle) {
         headerMenu.classList.add('_close');
     });
 };
+
 //  slider
 $(document).ready(function () {
     $('.gallery__photo').slick({
