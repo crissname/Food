@@ -134,7 +134,7 @@ img {
 
 .menu__list {
     display: flex;
-    margin: 0 -20px;
+
     align-items: center;
 }
 
@@ -145,8 +145,13 @@ img {
 
 }
 
-.menu__link {
+.menu__first-link {
     padding: 0 20px;
+    margin: 0 -7px;
+}
+
+.menu__link {
+    padding: 0 7px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -185,8 +190,9 @@ img {
     width: 8px;
     height: 8px;
     transform: rotate(135deg);
-    margin-left: -13px;
+
 }
+
 
 .menu__sublist {
     font-family: 'Poppins';
@@ -201,9 +207,13 @@ img {
     padding: 15px;
     background-color: #fff;
     transform: translate(0, 10%);
-    display: none;
-    pointer-events: none;
+    opacity: 0;
     transition: all 0.3s ease 0s;
+    z-index: 100;
+}
+
+body._pc .menu__sublist {
+    pointer-events: none;
 }
 
 .menu__sublist>li {
@@ -211,6 +221,11 @@ img {
     margin: 0 0 10px 0;
 }
 
+body._touch .menu__sublist {
+    opacity: 1;
+    visibility: visible;
+    display: none;
+}
 
 /* --------------------------- */
 
@@ -236,9 +251,11 @@ body._touch .menu__list>li._active .menu__sublist {
     z-index: 8;
     border-radius: 30px;
 }
-body._touch .menu__list>li._active .menu__sublist._close{
+
+body._touch .menu__list>li._active .menu__sublist._close {
     visibility: hidden;
 }
+
 .menu__btn-start {
     display: none;
 }
@@ -1146,6 +1163,12 @@ body._touch .menu__list>li._active .menu__sublist._close{
     color: #FF8126;
 }
 
+@media (max-width: 580px) {
+    .gallery__title {
+        font-size: 30px;
+    }
+}
+
 .gallery__title-1 {
     position: relative;
 }
@@ -1254,7 +1277,7 @@ body._touch .menu__list>li._active .menu__sublist._close{
     content: "";
     width: 10px;
     height: 10px;
-    border-left: 2px solid #fff;
+    border-left: 2p x solid #fff;
     border-bottom: 2px solid #fff;
 
     transform: rotate(-135deg);
@@ -1346,7 +1369,7 @@ body._touch .menu__list>li._active .menu__sublist._close{
 .footer__container {
     padding: 0 55px;
     display: flex;
-    margin: 0 -40px;
+
 }
 
 
@@ -1383,42 +1406,51 @@ li>.footer__link {
 .footer__link {
     padding: 7px 0;
 }
+
 @media (max-width: 1100px) {
     .footer__container {
         padding: 0 15px;
-        
-        margin: 0 -15px;
+
+
     }
+
     .footer__img {
         width: 100%;
         margin: 0 auto;
     }
+
     .footer__item {
         padding: 0 15px;
         margin: -7px 0;
     }
+
     .footer__nav>a {
         display: block;
         padding-bottom: 14px;
     }
 }
+
 @media (max-width: 650px) {
     .footer__container {
-        
+
         flex-direction: column;
         margin: -35px 0;
     }
+
     .footer__img {
         width: 25%;
         margin: 0 auto;
     }
+
     .footer__item {
         padding: 35px 0;
         margin: -7px 0;
     }
+
     .footer__nav>a {
         display: block;
         padding-bottom: 14px;
     }
 }
+
 /* footer end */
