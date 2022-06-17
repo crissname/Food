@@ -32,58 +32,34 @@ const isMobile = {
 if (isMobile.any()) {
     document.body.classList.add('_touch');
 
-    /*let menuArrows = document.querySelectorAll('.menu__first-link')
-    if (menuArrows.length > 0) {
-        for (let index = 0; index < menuArrows.length; index++) {
-            const menuArrow = menuArrows[index];
-            menuArrow.addEventListener("click", function (e) {
-                menuArrow.classList.toggle('_active');
-            })
+
+
+//  Открітие и закрытие подменю при нажатие ссылку и Добавление класса актив стрелк
+    $('.menu__first-link').click(function () {
+        if (!$(this).hasClass('active')) {
+            $(".menu__first-link").find('.menu__sublist').slideUp();
+            $('.menu__first-link').removeClass('active');
+            $(".menu__first-link").children('.menu__arrow').removeClass('_active');
+            $(this).find('.menu__sublist').slideToggle();
+            $(this).addClass('active');
+            $(this).children('.menu__arrow').addClass('_active');
+        } else {
+            $('.menu__first-link').removeClass('active');
+            $(".menu__first-link").find('.menu__sublist').slideUp()
+            $(".menu__first-link").children('.menu__arrow').removeClass('_active');
         }
-    }*/
-    /* $('.menu__first-link').on('click', function () {
-    $(".menu__first-link").find('.menu__sublist').hide()
-    $(this).find('.menu__sublist').toggle();
-    
-}); */
+    });
 
-
-
+    $(document).mouseup(function (e) {
+        if (!$('.menu__first-link').is(e.target) && $('.menu__first-link').has(e.target).length === 0) {
+            $('.menu__first-link').removeClass('active');
+            $('.menu__first-link').children('.menu__arrow').removeClass('_active');
+            $(".menu__first-link").find('.menu__sublist').slideUp()
+        }
+    });
 
     //  Открітие и закрытие подменю при нажатие ссылку и Добавление класса актив стрелк
-    $(document).ready(function () {
-        $('.menu__first-link').on('click', function () {
-            $(this).children('.menu__sublist').fadeToggle();
-            $(this).children('.menu__arrow').toggleClass('_active');
-        })
-    });
 
-    let menu1 = $('.menu__first-link-1');
-    let submenu1 = $('.menu__sublist-1');
-
-    $(document).mouseup(function (e) {
-        if (!menu1.is(e.target) && menu1.has(e.target).length === 0 &&
-            !submenu1.is(e.target) && submenu1.has(e.target).length === 0) {
-            submenu1.fadeOut();
-            $('.menu__arrow').removeClass('_active');
-        }
-    });
-    let menu2 = $('.menu__first-link-2');
-    let submenu2 = $('.menu__sublist-2');
-    $(document).mouseup(function (e) {
-        if (!menu2.is(e.target) && menu2.has(e.target).length === 0 && !submenu2.is(e.target) && submenu2.has(e.target).length === 0) {
-            submenu2.fadeOut();
-            $('.menu__arrow').removeClass('_active');
-        }
-    });
-    let menu3 = $('.menu__first-link-3');
-    let submenu3 = $('.menu__sublist-3');
-    $(document).mouseup(function (e) {
-        if (!menu3.is(e.target) && menu3.has(e.target).length === 0 && !submenu3.is(e.target) && submenu3.has(e.target).length === 0) {
-            submenu3.fadeOut();
-            $('.menu__arrow').removeClass('_active');
-        }
-    });
 } else {
     document.body.classList.add('_pc');
 }
@@ -105,12 +81,14 @@ if (iconMenu) {
 let closeTitle = document.querySelector('.header__promo-close');
 let headerPromo = document.querySelector('.header__promo');
 let headerContainer = document.querySelector('.header__container');
-let headerMenu = document.querySelector('.menu__body')
+let headerMenu = document.querySelector('.menu__body');
+let promo = document.querySelector('.promo')
 if (closeTitle) {
     closeTitle.addEventListener("click", function (e) {
         headerPromo.classList.add('_close');
         headerContainer.classList.add('_close');
         headerMenu.classList.add('_close');
+        promo.classList.add('_close')
     });
 };
 
