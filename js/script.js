@@ -15,16 +15,10 @@ $(document).ready(function () {
 
 });
 window.onload = function () {
-    //     let preloader = document.querySelector('.section');
-    //     preloader.style.display = 'none';
-    // }
-    const loader = document.querySelector('.section');
-    let opas = 1;
-    const interval = setInterval(() => {
-        opas -= 0.01;
-        loader.style.opacity = opas;
-        if (opas == 0) clearInterval(interval);
-    }, 10);}
+        let preloader = document.querySelector('.section');
+        preloader.style.display = 'none';
+     }
+
     //  Определение устройства
     const isMobile = {
         Android: function () {
