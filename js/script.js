@@ -1,23 +1,11 @@
 "use strick"
 
 // Loader
-function fakeLoad() {
-    var animate = $(".animate").addClass("run");
-    var timer = setTimeout(function () {
-
-    }, 3000);
-
+window.onload = function () {
+    let preloader = document.querySelector('.spinner-wrapper');
+    preloader.style.display = 'none';
 }
 
-$(document).ready(function () {
-
-    fakeLoad();
-
-});
-window.onload = function () {
-        let preloader = document.querySelector('.section');
-        preloader.style.display = 'none';
-     }
 
     //  Определение устройства
     const isMobile = {
